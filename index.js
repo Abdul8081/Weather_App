@@ -81,7 +81,7 @@ async function fetchUserWeatherInfo(coordinates) {
     }
     catch(err) {
         loadingScreen.classList.remove("active");
-        //HW
+        throw new TypeError('Screen cannot be open');
         
     }
 
@@ -116,7 +116,7 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(showPosition);
     }
     else {
-        //show the alert that current location can't be accesed
+        alert('new location cannot be accesed');
     }
 }
 
@@ -163,6 +163,6 @@ async function fetchSearchWeatherInfo(city) {
     }
     catch(err) {
         //hW
-        
+        alert(err);
     }
 }
